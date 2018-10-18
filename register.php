@@ -29,6 +29,22 @@
         </div>
         <div id="full_body">
         <div id="data_form">
+        <?php
+            if(isset($_POST['submit'])){
+                
+                include 'database.php';
+                $database = new Database();
+                $mysqli = $database->databaseConnect();
+        
+                $sql = "INSERT INTO client (name, nif, phone, address, city, country) VALUES(?,?,?,?,?,?)";
+                $statement = $mysqli->prepare($sql);
+                $statement->bind_param("ssssss", $_POST['name'], $_POST['nif'], $_POST['phone'], $_POST['address'], $_POST['city'], $_POST['country']);
+                $statement->execute();
+                echo("Data saved!");
+        
+        $database->databaseClose();
+            }         
+        ?>
             <p id="insert"> INSERIR CLIENTE </p>
 
             <form action="register.php" method="post">
@@ -59,15 +75,15 @@
                     <p> País:</p>
                     <select name="country">
                     <option disabled selected value></option>
-                    <option value="portugal">Portugal</option>
-                    <option value="espanha">Espanha</option>
-                    <option value="holanda">Holanda</option>
-                    <option value="franca">França</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Espanha">Espanha</option>
+                    <option value="Holanda">Holanda</option>
+                    <option value="França">França</option>
                      </select>
                 </div>
             </div>
             <div id="button_container">
-                <input id="button_submit" type="submit">
+                <input id="button_submit" type="submit" name="submit">
             </div>
             </form>
         </div>

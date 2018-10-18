@@ -11,19 +11,20 @@ class Database{
     }
 
     //Function to connect the desired database
-    public function database_connect(){
-        $this->connection = mysql_connect($this->server_name, $this->username, $this->password);
-        mysql_set_charset('utf-8', $this->connection);
+    public function databaseConnect(){
+        $this->connection = mysqli_connect($this->server_name, $this->username, $this->password, $this->database);
+        mysqli_set_charset($this->connection, "utf-8");
 
         if(!$this->connection){
-            die("Connection failed: ", mysql_error());
+            die("Connection failed: ". mysqli_connect_error());
         }
-        mysql_select_db($this->database, $this->connection);
+        mysqli_select_db($this->connection, $this->database);
+        return $this->connection;
     }
 
     //Function to close the database connection
-    public function database_close(){
-        mysql_close($this->connection);
+    public function databaseClose(){
+        mysqli_close($this->connection);
     }
 
 }

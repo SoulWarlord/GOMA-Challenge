@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS Client (
     name varchar(100) NOT NULL,
     nif int NOT NULL,
     phone varchar(50) NOT NULL,
-    adress varchar(100) NOT NULL,
+    address varchar(100) NOT NULL,
     city varchar(50) NOT NULL,
     country varchar(50) NOT NULL
     )
