@@ -1,0 +1,132 @@
+#wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1150px;
+}
+
+#page_header{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    color: #00AEEF;
+}
+
+#logo{
+    float: left;
+}
+
+#page_name{
+    float: right;
+    margin-top: 20px;
+}
+
+#separator{
+    clear: both;
+}
+
+#welcome{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    color: #00AEEF;
+}
+#greetings{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #4A4A4A;
+    line-height: 22px;
+    text-align: center;
+}
+
+#full_body{
+    background: #e8f0fc;
+}
+
+#data_form{
+    text-align: center;
+    width: 50%;
+    align-content: center;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #00AEEF;
+}
+
+.form_full_width{
+    line-height: 0%;
+    text-align: left;
+    align-content: center;
+    clear: both;
+}
+
+.form_half_width{
+    line-height: 0%;
+    width: 100%;
+}
+
+.form_col1{
+    text-align: left;
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 1%;
+}
+
+.form_col2{
+    text-align:left;
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#button_submit{
+    background: #00AEEF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #FFFFFFFF; 
+}
+
+#button_container{
+    margin-top: 1%;
+    align-content: left;
+    width: 25%;
+}
+
+
+input{
+    width: 100%;
+    background: #FFFFFFFF;
+    border-radius: 8px;
+}
+
+select{
+    width: 100%;
+    background: #FFFFFFFF;
+    border-radius: 8px;
+}
+
+.form_col{
+    float: left;
+    width: 50%;
+}
+
+#insert{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    color: #00AEEF;
+}
+
+.footer{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #00AEEF;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
