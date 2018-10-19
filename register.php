@@ -18,14 +18,13 @@
             <p> CLIENTES </p>
             </div> 
         </div>
-        <div id="separator">
-            <hr>
+        <div id="list">
+            <a href="client_list.php">LISTAR CLIENTES</a>
         </div>
         <div id="greetings">
             <p id="welcome"> BEM-VINDO <br> </p>
             <p> GOMA is a company form Portugal that creates integrated web-based solutions. <br>
             We work with organizations of all sizes to design and build great digital products.</p>
-
         </div>
         <div id="full_body">
         <div id="data_form">

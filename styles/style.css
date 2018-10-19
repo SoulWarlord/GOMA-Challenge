@@ -1,15 +1,26 @@
+/*register.php and shared pages style*/
 #wrapper{
     margin-left: auto;
     margin-right: auto;
+    
     width: 100%;
+    min-height: 100%;
+    margin-bottom: 80px;
     max-width: 1150px;
+    position: relative;
 }
 
 #page_header{
+    float: left;
+    width: 100%;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 32px;
     color: #00AEEF;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #CCCCCC;
+    margin-bottom: 20px;
 }
 
 #logo{
@@ -21,9 +32,6 @@
     margin-top: 20px;
 }
 
-#separator{
-    clear: both;
-}
 
 #welcome{
     font-family: 'Roboto', sans-serif;
@@ -38,10 +46,23 @@
     color: #4A4A4A;
     line-height: 22px;
     text-align: center;
+    clear: both;
+}
+
+#list{
+    float: right;
+}
+
+a{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #00AEEF;
+    text-decoration: underline;
 }
 
 #full_body{
-    background: #e8f0fc;
+    background: #EDF6F9;
 }
 
 #data_form{
@@ -124,9 +145,51 @@ select{
     font-weight: bold;
     font-size: 16px;
     color: #00AEEF;
+    background: #EEEEEE;
     position: fixed;
-    left: 0;
+    left: 0px;
     bottom: 0;
+    right:0;
     width: 100%;
     text-align: center;
+}
+
+/*client_list styles */
+
+#insert_new .a{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #00AEEF;
+    text-decoration: underline;
+}
+
+#page_title{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    color: #00AEEF;
+}
+
+#results{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #4A4A4A;
+}
+
+#php_result{
+    color: #00AEEF;
+}
+
+#last_reg{
+    display: inline-block;
+    width: 57%;
+    text-align: right;
+}
+
+#page_title, #results{
+    display: inline-block;
+    width: 20%;
+    margin-right: 1%;
 }
