@@ -28,11 +28,11 @@
         <div id="insert_new">
             <a href="register.php">INSERIR NOVO</a>
         </div>
-        <div id="title_section"> 
-            <div id=page_title>
+        <div class="grid-container">
+            <div id="page_title">
                 <p> LISTA DE CLIENTES </p>
             </div>
-            <div id="results" style="color:<?php echo(@$_GET["blue"])?>">
+            <div id="results">
                 <p> ( <span id="php_result"><?php echo($registers['register'])?></span> resultados no sistema) </p>
             </div>
             <div id="last_reg">

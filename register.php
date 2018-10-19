@@ -29,7 +29,14 @@
         <div id="full_body">
         <div id="data_form">
         <?php
-            if(isset($_POST['submit'])){
+            $required = array('name', 'nif', 'phone', 'address', 'city', 'country');
+            $missing_value = false;
+            foreach($required as $field){
+                if(empty($_POST[$field])){
+                    $missing_value = true;
+                }
+            }
+            if($_SERVER["REQUEST_METHOD"] == "POST" and !$missing_value){
                 
                 include 'database.php';
                 $database = new Database();
@@ -39,13 +46,25 @@
                 $statement = $mysqli->prepare($sql);
                 $statement->bind_param("ssssss", $_POST['name'], $_POST['nif'], $_POST['phone'], $_POST['address'], $_POST['city'], $_POST['country']);
                 $statement->execute();
-                echo("Data saved!");
-        
-        $database->databaseClose();
-            }         
+                $success_message = ("Os dados foram inseridos na base de dados");
+                $database->databaseClose();
+            }
+            elseif($_SERVER["REQUEST_METHOD"] == "POST" and $missing_value){
+                $error_message = ("ERRO, Verifique se preencheu os campos devidamente");
+            }   
         ?>
-            <p id="insert"> INSERIR CLIENTE </p>
-
+            
+            <?php
+                if($_SERVER["REQUEST_METHOD"] == "POST" and isset($success_message)){
+                    echo("<div id='success_msg' >" . $success_message . "</div>");  
+                }
+                elseif($_SERVER["REQUEST_METHOD"] == "POST" and isset($error_message)){
+                    echo("<div id='error_msg' >" . $error_message . "</div>");
+                }
+            ?>
+            <div id="insert">
+                <p> INSERIR CLIENTE </p>
+            </div>
             <form action="register.php" method="post">
             <div class="form_full_width">
                 <p>Nome:</p>
