@@ -228,3 +228,37 @@ select{
     grid-gap: 10px;
     grid-template-columns: 1fr 1fr 3fr ;
 }
+
+.client_name{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #4A4A4A;
+    margin-left: 20px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.client_info{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #00AEEF;
+    margin-left: 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.client_data{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #979797; 
+    background: #EDF6F9;
+}
+.client_data_final{
+    background: #EDF6F9;
+}
+
+.client_p{
+    margin-top: 30px;
+}

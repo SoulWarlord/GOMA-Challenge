@@ -10,11 +10,12 @@
 </head>
 <body>
     <?php
-        include 'database.php';
+        require_once 'database.php';
         $database = new Database();
         $mysqli = $database->databaseConnect();
         $sql = mysqli_query($mysqli, "SELECT COUNT(*) as register FROM client");
         $registers = mysqli_fetch_assoc($sql);
+        $database->databaseClose();
     ?>
     <div id="wrapper">
         <div id="page_header">
@@ -22,7 +23,7 @@
                 <img src="styles/gomalogo.png" alt="GOMA Development">
             </div>
             <div id="page_name">
-            <p> CLIENTES </p>
+                <p> CLIENTES </p>
             </div> 
         </div>
         <div id="insert_new">
@@ -39,8 +40,31 @@
                 <a href="#">ULTIMOS 3 REGISTOS</a>
             </div>
         </div>
-        <div id="table_list">
-            
+        <div id="client_list_data">
+        <?php
+                require_once 'clientes.php';
+                $client = new Clients();
+                $data_array = $client->listClients();
+                $array_length = count($data_array);
+                for ($i = 0; $i < $array_length; $i++) {
+                    if($i == $array_length-1){
+                        echo("<div class='client_data_final'>
+                         <span class='client_name'>"  . $data_array[$i]['name'] . " </span><br>
+                        <span class='client_info'>" . $data_array[$i]['address'] . ", " . $data_array[$i]['city'] .
+                        ", " . $data_array[$i]['country'] . " - NIF: " . $data_array[$i]['nif'] . ", Tel. " 
+                        . $data_array[$i]['phone'] . "</span>
+                        </div>");
+                    }
+                    else{
+                        echo("<div class='client_data'>
+                        <span class='client_name'>"  . $data_array[$i]['name'] . " </span><br>
+                        <span class='client_info'>" . $data_array[$i]['address'] . ", " . $data_array[$i]['city'] .
+                        ", " . $data_array[$i]['country'] . " - NIF: " . $data_array[$i]['nif'] . ", Tel. " 
+                        . $data_array[$i]['phone'] . "</span>
+                        </div>");
+                    }
+                }
+            ?>
         </div>
     </div> 
 </body>

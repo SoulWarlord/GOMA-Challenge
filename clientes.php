@@ -1,8 +1,10 @@
 <?php
+require_once('database.php');
+
 class Clients{
 
-    require_once('database.php');
-    public $clientes = array();
+    public $clients = array();
+    private $database;
     
     //Class constructor
     public function __construct(){
@@ -11,23 +13,17 @@ class Clients{
 
     //Function to list clients into an array
     public function listClients(){
-        $this->database->database_connect();
-        $sql = 'SELECT * FROM cliente';
-        $query = mysql_query($sql) or die(mysql_error());
-        $this->database->database_close();
+        $mysql= $this->database->databaseConnect();
+        $sql = 'SELECT * FROM client';
+        $query = mysqli_query($mysql, $sql) or die(mysqli_connect_error());
+        $this->database->databaseClose();
 
-        while($row = mysql_fetch_array($query)){
-            $this->clientes = $row;
+        while($row = mysqli_fetch_assoc($query)){
+            $this->clients[] = $row;
         }
+        //print_r($this->clients);
+
+        return $this->clients;
     }
-
 }
-
-
-
-
-
-
-
-
 ?>
