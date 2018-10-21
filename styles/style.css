@@ -1,8 +1,11 @@
-/*register.php and shared pages style*/
+/*
+Author: André Lascas
+register.php and shared pages style
+*/
+
 #wrapper{
     margin-left: auto;
     margin-right: auto;
-    
     width: 100%;
     min-height: 100%;
     margin-bottom: 80px;
@@ -58,8 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    
+    margin-top: 20px;  
 }
 
 #welcome{
@@ -68,14 +70,18 @@
     font-size: 22px;
     color: #00AEEF;
 }
+
 #greetings{
+    text-align: center;
+    clear: both;
+}
+
+#resume{
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 16px;
     color: #4A4A4A;
     line-height: 22px;
-    text-align: center;
-    clear: both;
 }
 
 #list{
@@ -96,8 +102,7 @@ a:hover{
 
 #full_body{
     background: #EDF6F9;
-    text-align: center;
-    
+    text-align: center; 
 }
 
 #data_form{
@@ -158,7 +163,6 @@ a:hover{
     display: flex;
     align-content: left;
 }
-
 
 .form-control{
     width: 100%;
@@ -241,6 +245,7 @@ a:hover{
     display: grid;
     grid-template-columns: 1fr 1fr 3fr ;
     margin-left: 20px;
+    column-gap: 2px;
 }
 
 .client_name{
@@ -285,5 +290,3 @@ a:hover{
     margin-top: 20px;
     text-align: center;
 }
-
-

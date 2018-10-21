@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="André Lascas">
     <title>GOMA - Clientes Registados</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/bootstrap.min.css" />
@@ -43,7 +44,7 @@
         </div>
         
         <div id="client_list_data"<?php if (isset($_GET['last_reg'])){?>style="display:none"<?php } ?>>
-        <?php
+            <?php
                 require_once 'clientes.php';
                 $client = new Clients();
                 $data_array = $client->listClients();
@@ -51,7 +52,7 @@
                 for ($i = $array_length-1; $i >= 0; $i--) {
                     if($i == 0){
                         echo("<div class='client_data_final'>
-                         <span class='client_name'>"  . $data_array[$i]['name'] . " </span><br>
+                        <span class='client_name'>"  . $data_array[$i]['name'] . " </span><br>
                         <span class='client_info'>" . $data_array[$i]['address'] . ", " . $data_array[$i]['city'] .
                         ", " . $data_array[$i]['country'] . " - NIF: " . $data_array[$i]['nif'] . ", Tel. " 
                         . $data_array[$i]['phone'] . "</span>
@@ -69,7 +70,7 @@
             ?>
         </div>
         <div id="last_reg_list_data" <?php if (isset($_GET['last_reg'])){?>style="display:block"<?php } ?>>
-        <?php
+            <?php
                 require_once 'clientes.php';
                 $client = new Clients();
                 $last_data_array = $client->last3Registers();
@@ -96,8 +97,7 @@
             <div id="back">
                 <a href="client_list.php">VOLTAR AO REGISTO COMPLETO</a>
             </div>
-        </div>
-        
+        </div> 
     </div> 
 </body>
 <div class="footer">

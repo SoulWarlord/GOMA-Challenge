@@ -1,6 +1,14 @@
 <?php
+/**
+ * @author: André Lascas
+ * @version: 1.0
+ *
+ */
 require_once('database.php');
 
+/**
+ * Class to get desired data from a given database and store it in an array
+ */
 class Clients{
 
     public $clients = array();

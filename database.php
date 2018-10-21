@@ -1,4 +1,13 @@
 <?php
+/**
+ * @author: André Lascas
+ * @version: 1.0
+ *
+ */
+
+/**
+ * Class to connect and close connection to the desired database
+ */
 class Database{
     private $connection;
     private $server_name = "localhost";
@@ -6,11 +15,14 @@ class Database{
     private $password = "";
     private $database = "goma";
 
-    //Class constructor
+    /**
+     * Class constructor
+     */
     public function __construct(){
     }
-
-    //Function to connect the desired database
+    /**
+     * Function to connect to the desired database
+     */
     public function databaseConnect(){
         $this->connection = mysqli_connect($this->server_name, $this->username, $this->password, $this->database);
         mysqli_set_charset($this->connection, "utf-8");
@@ -22,12 +34,12 @@ class Database{
         return $this->connection;
     }
 
-    //Function to close the database connection
+    /**
+     * Function to close the database connection
+     */
     public function databaseClose(){
         mysqli_close($this->connection);
     }
 
 }
-
-
 ?>
