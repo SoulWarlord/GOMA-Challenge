@@ -4,6 +4,7 @@ require_once('database.php');
 class Clients{
 
     public $clients = array();
+    public $last_registers = array();
     private $database;
     
     //Class constructor
@@ -21,9 +22,24 @@ class Clients{
         while($row = mysqli_fetch_assoc($query)){
             $this->clients[] = $row;
         }
-        //print_r($this->clients);
 
         return $this->clients;
+    }
+
+    //Function to list the last 3 registered clients
+    public function last3Registers(){
+        $mysql= $this->database->databaseConnect();
+        $sql = 'SELECT * FROM (
+            SELECT * FROM client ORDER BY id DESC LIMIT 3
+          ) as r ORDER BY name';
+        $query = mysqli_query($mysql, $sql) or die(mysqli_connect_error());
+        $this->database->databaseClose();
+
+        while($row = mysqli_fetch_assoc($query)){
+            $this->last_registers[] = $row;
+        }
+
+        return $this->last_registers;
     }
 }
 ?>

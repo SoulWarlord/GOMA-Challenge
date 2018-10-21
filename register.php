@@ -3,10 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>GOMA - Registar Clientes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css" />
+    
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    
 </head>
 <body>
     <div id="wrapper">
@@ -56,10 +59,10 @@
             
             <?php
                 if($_SERVER["REQUEST_METHOD"] == "POST" and isset($success_message)){
-                    echo("<div id='success_msg' >" . $success_message . "</div>");  
+                    echo("<div id='success_msg'><p>"  . $success_message . "</p></div>");  
                 }
                 elseif($_SERVER["REQUEST_METHOD"] == "POST" and isset($error_message)){
-                    echo("<div id='error_msg' >" . $error_message . "</div>");
+                    echo("<div id='error_msg'><p>" . $error_message . "</p></div>");
                 }
             ?>
             <div id="insert">
@@ -68,30 +71,30 @@
             <form action="register.php" method="post">
             <div class="form_full_width">
                 <p>Nome:</p>
-                <input type="text" name="name">
+                <input type="text" class="form-control" name="name">
             </div>
             <div class="form_half_width">
                 <div class="form_col1">
                     <p>NIF:</p>
-                    <input type="number" name="nif">
+                    <input type="number" class="form-control" name="nif">
                 </div>
                 <div class="form_col2">
                     <p> Telefone: </p>
-                    <input type="text" name="phone">
+                    <input type="text" class="form-control" name="phone">
                 </div>
             </div>
             <div class="form_full_width">
                 <p>Morada:</p>
-                <input type="text" name="address">
+                <input type="text" class="form-control" name="address">
             </div>
             <div class="form_half_width">
                 <div class="form_col1">
                     <p>Localidade:</p>
-                    <input type="text" name="city">
+                    <input type="text" class="form-control" name="city">
                 </div>
                 <div class="form_col2">
                     <p> País:</p>
-                    <select name="country">
+                    <select class="form-control" name="country">
                     <option disabled selected value></option>
                     <option value="Portugal">Portugal</option>
                     <option value="Espanha">Espanha</option>
@@ -101,7 +104,7 @@
                 </div>
             </div>
             <div id="button_container">
-                <input id="button_submit" type="submit" name="submit">
+                <input id="button_submit" class="btn btn-primary" type="submit" name="submit">
             </div>
             </form>
         </div>
