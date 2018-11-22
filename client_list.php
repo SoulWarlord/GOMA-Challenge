@@ -29,7 +29,7 @@
             </div> 
         </div>
         <div>
-            <a id="insert_new" href="register.php">INSERIR NOVO</a>
+            <a id="insert_new" href="index.php">INSERIR NOVO</a>
         </div>
         <div class="grid-container">
             <div id="page_title">
