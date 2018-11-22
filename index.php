@@ -67,7 +67,7 @@
                 <div id="insert">
                     <p> INSERIR CLIENTE </p>
                 </div>
-                <form action="register.php" method="post">
+                <form action="index.php" method="post">
                     <div class="form_full_width">
                         <p>Nome:</p>
                         <input type="text" class="form-control" name="name">

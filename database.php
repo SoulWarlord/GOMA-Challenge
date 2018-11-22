@@ -12,7 +12,7 @@ class Database{
     private $connection;
     private $server_name = "localhost";
     private $username = "root";
-    private $password = "";
+    private $password = "mysql";
     private $database = "goma";
 
     /**
